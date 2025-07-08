@@ -1,4 +1,4 @@
-package permissionsService
+package permissions_service
 
 import (
 	"github.com/connor-davis/kalimbu-fx/internal/models/system"

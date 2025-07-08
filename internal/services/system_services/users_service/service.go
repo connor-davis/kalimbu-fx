@@ -1,4 +1,4 @@
-package usersService
+package users_service
 
 import (
 	"github.com/connor-davis/kalimbu-fx/internal/models/system"
