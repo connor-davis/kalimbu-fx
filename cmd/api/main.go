@@ -9,7 +9,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func NewFiberApi(lc fx.Lifecycle, logger *zap.Logger, postgres *gorm.DB) *fiber.App {
+func RunFiberApi(lc fx.Lifecycle, logger *zap.Logger, postgres *gorm.DB) *fiber.App {
 	app := fiber.New(fiber.Config{
 		ServerHeader: "Thusa Kalimbu API",
 		AppName:      "Thusa Kalimbu API",
