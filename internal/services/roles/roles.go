@@ -1,4 +1,4 @@
-package roles
+package rolesService
 
 import (
 	"github.com/connor-davis/kalimbu-fx/internal/models/system"
