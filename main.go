@@ -4,9 +4,7 @@ import (
 	"github.com/connor-davis/kalimbu-fx/cmd/api"
 	"github.com/connor-davis/kalimbu-fx/cmd/migrate"
 	"github.com/connor-davis/kalimbu-fx/internal/postgres"
-	permissionsService "github.com/connor-davis/kalimbu-fx/internal/services/permissions"
-	rolesService "github.com/connor-davis/kalimbu-fx/internal/services/roles"
-	usersService "github.com/connor-davis/kalimbu-fx/internal/services/users"
+	"github.com/connor-davis/kalimbu-fx/internal/services"
 	"github.com/gofiber/fiber/v2"
 	"go.uber.org/fx"
 	"go.uber.org/zap"
@@ -20,12 +18,7 @@ func main() {
 			migrate.RunMigrations,
 		),
 		// Provide the services as dependencies.
-		fx.Provide(
-			rolesService.NewRolesService,
-			permissionsService.NewPermissionsService,
-			usersService.NewUsersService,
-		),
-
+		services.ProvideServices(),
 		// Provide the cmdlets and the zap logger as dependencies.
 		fx.Provide(
 			api.RunFiberApi,
